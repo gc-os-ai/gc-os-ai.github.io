@@ -4,3 +4,7 @@
 
 layout: home
 ---
+
+**Welcome to the German Center for Open Source AI Software Research!**
+
+To get started, take a look at our current [Research](/research).
