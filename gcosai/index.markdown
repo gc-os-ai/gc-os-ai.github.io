@@ -3,7 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-list_title: Current Research
+research_title: Current Research
+blog_title: Blog
 ---
 
 **Welcome to the German Center for Open Source AI Software Research!**
