@@ -7,7 +7,11 @@ module.exports = {
     './*.{html,md}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'gcos-green': '#4ca893'
+      }
+    },
   },
   plugins: [],
 }

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+nav: true
 ---
 # About page
 

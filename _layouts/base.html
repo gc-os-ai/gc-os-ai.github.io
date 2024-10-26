@@ -1,20 +1,19 @@
 <!doctype html>
-<html>
+<html class="h-full">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/dist-styles.css' | relative_url }}">
 </head>
-<body class="min-h-screen flex flex-col">
-    {% include navigation.html %}
-    
-    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="max-w-7xl mx-auto">
-            {{ content }}
-        </div>
-    </main>
 
+<body class="min-h-full flex flex-col">
+    {% include navigation.html %}
+    <main class="flex-grow container mx-auto px-4 py-8">
+        {{ content }}
+    </main>
     {% include footer.html %}
 </body>
+
 </html>
