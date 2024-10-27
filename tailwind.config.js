@@ -10,6 +10,9 @@ module.exports = {
     extend: {
       colors: {
         'gcos-green': '#4ca893'
+      },
+      animation: {
+        'subtleColorChange': 'subtleColorChange 20s infinite'
       }
     },
   },
