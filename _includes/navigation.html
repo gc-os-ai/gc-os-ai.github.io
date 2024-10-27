@@ -1,0 +1,28 @@
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm bg-white border-b-2 border-b-black">
+    <div class=" mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center cursor-pointer">
+                <a href="{{ '/' | relative_url }}" class="text-lg font-bold">
+                    <img
+                        src="/assets/images/gcos.png"
+                    />
+                </a>
+            </div>
+            <div class="flex justify-evenly space-x-4">
+                {% for page in site.pages %}
+                {% if page.title and page.nav != false %}
+                <a href="{{ page.url | relative_url }}"
+                    class="text-black hover:text-gcos-green text-xl {% if page.url == current_page %}text-gcos-green{% endif %}">
+                    {{ page.title }}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <a href="https://paypal.com/gcosai" target="_blank" class="bg-gcos-green border border-black p-1 px-3 cursor-pointer">
+                <p class="text-white">Donate</p>
+            </a>            
+            
+        </div>
+    </div>
+</nav>
