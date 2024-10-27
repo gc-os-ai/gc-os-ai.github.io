@@ -68,3 +68,27 @@ title: Home
     {% endfor %}
     </div>
 </div>
+
+## Our Projects
+{: .text-4xl .font-bold}
+
+<div class="container mx-auto py-12">
+    <div class="flex flex-wrap -mx-4">
+      {% for project in site.projects %}
+        {% capture project_content %}
+          <div>
+      <!-- Bild Container -->
+      <img
+        src="{{ project.image }}"
+        alt="{{ project.title }}"
+        class="w-full h-full object-cover"
+      />  
+      </div>
+        {% endcapture %}
+        {% include card.html 
+        url=project.url
+        content=project_content
+      %}
+      {% endfor %}
+    </div>
+</div>
