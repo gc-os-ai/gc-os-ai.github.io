@@ -1,2 +1,6 @@
+title: German Center for Open Source AI Software Research
+description: Non-profit open source AI software for the D&EU tech landscape, and supporting openly/publicly governed open source.
+
 collections:
-  - involvement_opportunities
+  involvement_opportunities:
+    permalink: /:url

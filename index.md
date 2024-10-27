@@ -48,13 +48,13 @@ title: Home
 
 <div class="container mx-auto py-12">
     <div class="flex flex-wrap -mx-4">
-    {% for involvement_opportunity in site.involvement_opportunities %}
-      {% capture post_content %}
+        {% for opportunity in site.involvement_opportunities %}
+      {% capture opportunity_content %}
         <h3 class="text-2xl font-bold mb-2 group-hover:text-white">
-          {{ involvement_opportunity.title }}
+          {{ opportunity.title }}
         </h3>
         <ul class="mb-4 group-hover:text-white list-disc list-inside">
-          {% for item in involvement_opportunity.list_items %}
+          {% for item in opportunity.list_items %}
             <li>{{ item }}</li>
           {% endfor %}
         </ul>
@@ -62,8 +62,8 @@ title: Home
       {% endcapture %}
       
       {% include card.html 
-        url=post.url
-        content=post_content
+        url=opportunity.url
+        content=opportunity_content
       %}
     {% endfor %}
     </div>

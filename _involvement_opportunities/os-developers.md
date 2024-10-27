@@ -1,6 +1,6 @@
 ---
 title: OS Developers
-category: involvment
+permalink: /join
 list_items:
   - OS project umbrella
   - OS fellowships
