@@ -17,31 +17,29 @@ nav: false
 </div>
 
 <div class="container mx-auto py-12">
-    <div class="flex flex-wrap -mx-4">
-        {% assign articles = site.posts | where:"category", "article" %}
-        {% assign articles = articles | slice: 0, 3 %}
-        {% for post in articles %}
-            
-            {% capture post_content %}
-            <div>
-                <h3 class="text-2xl font-bold mb-2 group-hover:text-white">
-                    {{ post.title }}
-                </h3>
-                <p class="mb-4 group-hover:text-white line-clamp-3">
-                    {{ post.description }}
-                </p>
-                <div>
-                <span class="font-semibold group-hover:text-white">{{ include.read_more_text | default: "Read more" }}</span>
-            </div>  
-            </div>
-            {% endcapture %}
-
-            {% include card.html 
-                content=post_content
-                url=post.url
-            %}
-        {% endfor %}
+  <div class="flex flex-wrap -mx-4">
+    {% assign articles = site.posts | where:"category", "article" %}
+    {% assign articles = articles | slice: 0, 3 %}
+    {% for post in articles %}
+    {% capture post_content %}
+    <div class="flex flex-col h-32">
+      <h3 class="text-2xl font-bold mb-2 group-hover:text-white overflow-hidden" style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
+        {{ post.title }}
+      </h3>
+      <p class="mb-4 group-hover:text-white overflow-hidden flex-grow" style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
+        {{ post.content | strip_html }}
+      </p>
+      <div class="mt-auto">
+        <span class="font-semibold group-hover:text-white">{{ include.read_more_text | default: "Read more" }}</span>
+      </div>
     </div>
+    {% endcapture %}
+    {% include card.html
+      content=post_content
+      url=post.url
+    %}
+    {% endfor %}
+  </div>
 </div>
 
 ## Get involved with Open Source AI @ GC.OS
