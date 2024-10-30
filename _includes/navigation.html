@@ -1,28 +1,27 @@
 <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm bg-white border-b-2 border-b-black">
-    <div class=" mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center h-16">
-            <div class="flex items-center cursor-pointer">
+            <div class="flex items-center cursor-pointer h-16 w-40 flex-shrink-0">
                 <a href="{{ '/' | relative_url }}" class="text-lg font-bold">
-                    <img
-                        src="/assets/images/gcos.png"
-                    />
+                    <img src="/assets/images/gcos.png" class="h-full w-full object-contain" alt="GCOS Logo" />
                 </a>
             </div>
-            <div class="flex justify-evenly space-x-4">
-                {% for page in site.pages %}
-                {% if page.title and page.nav != false %}
-                <a href="{{ page.url | relative_url }}"
-                    class="text-black hover:text-gcos-green text-xl {% if page.url == current_page %}text-gcos-green{% endif %}">
-                    {{ page.title }}
-                </a>
-                {% endif %}
+            <div class="flex-grow flex justify-center space-x-6 px-4 overflow-x-auto">
+                {% for nav_item in site.data.nav_order %}
+                  {% for p in site.pages %}
+                    {% if p.title == nav_item and p.nav != false %}
+                      <a href="{{ p.url | relative_url }}"
+                         class="text-black hover:text-gcos-green text-xl whitespace-nowrap {% if page.url == p.url %}text-gcos-green{% endif %}">
+                        {{ p.title }}
+                      </a>
+                    {% endif %}
+                  {% endfor %}
                 {% endfor %}
-            </div>
-
-            <a href="https://paypal.com/gcosai" target="_blank" class="bg-gcos-green border border-black p-1 px-3 cursor-pointer">
-                <p class="text-white">Donate</p>
-            </a>            
-            
+              </div>
+            {% include button.html 
+                title='Donate'
+                url='https://paypal.com/gcosai'
+            %}
         </div>
     </div>
 </nav>

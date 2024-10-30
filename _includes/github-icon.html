@@ -1,0 +1,9 @@
+{%- if include.link -%}
+<a href="{{ include.link }}" class="text-gray-600 hover:text-gray-900 transition-colors duration-200" target="_blank"
+    rel="noopener noreferrer" aria-label="GitHub Profile">
+    asjdaj
+    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+        <use xlink:href="{{ '/assets/images/social-icons/github.svg#icon' | relative_url }}"></use>
+    </svg>
+</a>
+{%- endif -%}

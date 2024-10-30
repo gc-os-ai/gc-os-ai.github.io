@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+nav: false 
 ---
 
 <div class="relative z-10 container mx-auto py-20 bg-cover bg-center">
@@ -62,7 +63,7 @@ title: Home
       {% endcapture %}
       
       {% include card.html 
-        url=opportunity.url
+        url=opportunity.permalink
         content=opportunity_content
       %}
     {% endfor %}
@@ -77,7 +78,6 @@ title: Home
       {% for project in site.projects %}
         {% capture project_content %}
           <div>
-      <!-- Bild Container -->
       <img
         src="{{ project.image }}"
         alt="{{ project.title }}"
@@ -86,7 +86,7 @@ title: Home
       </div>
         {% endcapture %}
         {% include card.html 
-        url=project.url
+        url='/open-source-ai'
         content=project_content
       %}
       {% endfor %}
