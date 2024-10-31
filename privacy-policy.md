@@ -1,4 +1,4 @@
 ---
 layout: default
-title: Open Source AI
+title: Privacy Policy
 ---

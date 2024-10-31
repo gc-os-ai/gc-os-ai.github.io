@@ -1,0 +1,86 @@
+---
+layout: default
+title: Home
+nav: false 
+show_title: false
+---
+
+<div class="relative z-10 container mx-auto py-20 bg-cover bg-center">
+    <h1 class="text-6xl text-gcos-green font-bold">
+        {{ "AI owned by you" | upcase }}
+        <br />
+        <span class="hidden sm:inline-block pl-8 md:pl-12 lg:pl-16">{{ "governed democratically" | upcase }}</span>
+        <span class="sm:hidden">{{ "governed democratically" | upcase }}</span>
+        <br />
+        <span class="hidden md:inline-block pl-16 lg:pl-32">{{ "for the benefit of society" | upcase }}</span>
+        <span class="md:hidden">{{ "for the benefit of society" | upcase }}</span>
+    </h1>
+</div>
+
+<div class="container mx-auto py-12">
+  <div class="flex flex-wrap -mx-4">
+    {% assign articles = site.posts | where:"category", "article" %}
+    {% assign articles = articles | slice: 0, 3 %}
+    {% for post in articles %}
+    {% capture post_content %}
+    <div class="flex flex-col h-32">
+      <h3 class="text-2xl font-bold mb-2 group-hover:text-white overflow-hidden" style="-webkit-line-clamp: 2; line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
+        {{ post.title }}
+      </h3>
+      <p class="mb-4 group-hover:text-white overflow-hidden flex-grow" style="-webkit-line-clamp: 2; line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
+        {{ post.content | strip_html }}
+      </p>
+      <div class="mt-auto">
+        <span class="font-semibold group-hover:text-white">{{ include.read_more_text | default: "Read more" }}</span>
+      </div>
+    </div>
+    {% endcapture %}
+    {% include card.html
+      content=post_content
+      url=post.url
+    %}
+    {% endfor %}
+  </div>
+</div>
+
+<h2 class="text-4xl font-bold">Get involved with Open Source AI @ GC.OS</h2>
+<div class="container mx-auto py-12">
+    <div class="flex flex-wrap -mx-4">
+        {% for opportunity in site.involvement_opportunities %}
+      {% capture opportunity_content %}
+        <h3 class="text-2xl font-bold mb-2 group-hover:text-white">
+          {{ opportunity.title }}
+        </h3>
+        <ul class="mb-4 group-hover:text-white list-disc list-inside">
+          {% for item in opportunity.list_items %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <span class="font-semibold group-hover:text-white">Learn more</span>
+      {% endcapture %}
+      
+      {% include card.html 
+        url=opportunity.permalink
+        content=opportunity_content
+      %}
+    {% endfor %}
+    </div>
+</div>
+
+
+<h2 class="text-4xl font-bold">Our Projects</h2>
+<div class="container mx-auto py-12">
+    <div class="flex flex-wrap mb-8">
+      {% for project in site.projects %}
+        <div class="border border-gcos-green hover:bg-gcos-green p-2 rounded-md group transition-colors duration-300 mr-2">
+          <a href="/open-source-ai">
+          <img
+            src="{{ project.image }}"
+            alt="{{ project.title }}"
+            class="w-12 h-12 object-cover"
+            /> 
+          </a> 
+      </div>
+      {% endfor %}
+    </div>
+</div>

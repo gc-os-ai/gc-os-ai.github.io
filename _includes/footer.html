@@ -3,8 +3,8 @@
         <div class="flex justify-between items-center">
             <div>© {{ site.time | date: '%Y' }} {{ site.title }}</div>
             <div class="flex space-x-4">
-                <a href="/impressum" class="hover:text-gray-300">Impressum</a>
-                <a href="/datenschutz" class="hover:text-gray-300">Datenschutz</a>
+                <a href="{{ '/imprint' | relative_url }}" class="hover:text-gray-300">Imprint</a>
+                <a href="{{ '/privacy-policy' | relative_url }}" class="hover:text-gray-300">Privacy Policy</a>
             </div>
         </div>
     </div>
