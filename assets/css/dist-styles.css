@@ -734,6 +734,10 @@ video {
   cursor: pointer;
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .list-inside {
   list-style-position: inside;
 }

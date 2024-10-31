@@ -1,6 +1,6 @@
 <div class="w-full md:w-1/3 px-4 mb-8">
-    <div class="block h-full border border-gcos-green {% if include.show_hover != false %}hover:bg-gcos-green{% endif %} shadow-lg rounded-lg overflow-hidden group transition-colors duration-300 cursor-pointer">
-    {% if include.url %}<a href="{{ include.url }}" target="_blank">{% endif %}
+    <div class="block h-full border border-gcos-green {% if include.show_hover != false %}hover:bg-gcos-green{% endif %} shadow-lg rounded-lg overflow-hidden group transition-colors duration-300">
+    {% if include.url %}<a href="{{ include.url }}" class="cursor-pointer" target="_blank">{% endif %}
         <div class="p-6">
             {{ include.content }}
         </div>
