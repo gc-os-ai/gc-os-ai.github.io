@@ -1,4 +1,4 @@
 ---
 layout: default
-title: Datenschutz
+title: Privacy Policy
 ---

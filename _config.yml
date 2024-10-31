@@ -9,7 +9,3 @@ collections:
     permalink: /:url
   projects:
     ouput: true
-  pages:
-    output: true
-    permalink: /:name
-
