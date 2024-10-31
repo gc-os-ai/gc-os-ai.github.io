@@ -9,10 +9,14 @@
             <div class="flex-grow flex justify-center space-x-6 px-4 overflow-x-auto">
                 {% for nav_item in site.data.nav_order %}
                   {% for p in site.pages %}
-                    {% if p.title == nav_item and p.nav != false %}
+                    {% if ((p.title == nav_item or ) or (p.nav_title == nav_item)) and p.nav != false %}
                       <a href="{{ p.url | relative_url }}"
                          class="text-black hover:text-gcos-green text-xl whitespace-nowrap {% if page.url == p.url %}text-gcos-green{% endif %}">
-                        {{ p.title }}
+                        {% if p.nav_title %}
+                          {{ p.nav_title }}
+                        {% else %}
+                          {{ p.title }}
+                        {% endif %}
                       </a>
                     {% endif %}
                   {% endfor %}

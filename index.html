@@ -2,6 +2,7 @@
 layout: default
 title: Home
 nav: false 
+show_title: false
 ---
 
 <div class="relative z-10 container mx-auto py-20 bg-cover bg-center">
@@ -23,10 +24,10 @@ nav: false
     {% for post in articles %}
     {% capture post_content %}
     <div class="flex flex-col h-32">
-      <h3 class="text-2xl font-bold mb-2 group-hover:text-white overflow-hidden" style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
+      <h3 class="text-2xl font-bold mb-2 group-hover:text-white overflow-hidden" style="-webkit-line-clamp: 2; line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
         {{ post.title }}
       </h3>
-      <p class="mb-4 group-hover:text-white overflow-hidden flex-grow" style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
+      <p class="mb-4 group-hover:text-white overflow-hidden flex-grow" style="-webkit-line-clamp: 2; line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical;">
         {{ post.content | strip_html }}
       </p>
       <div class="mt-auto">
@@ -42,8 +43,7 @@ nav: false
   </div>
 </div>
 
-## Get involved with Open Source AI @ GC.OS
-{: .text-4xl .font-bold}
+<h2 class="text-4xl font-bold">Get involved with Open Source AI @ GC.OS</h2>
 
 <div class="container mx-auto py-12">
     <div class="flex flex-wrap -mx-4">
@@ -68,25 +68,20 @@ nav: false
     </div>
 </div>
 
-## Our Projects
-{: .text-4xl .font-bold}
+<h2 class="text-4xl font-bold">Our Projects</h2>
 
 <div class="container mx-auto py-12">
-    <div class="flex flex-wrap -mx-4">
+    <div class="flex flex-wrap mb-8">
       {% for project in site.projects %}
-        {% capture project_content %}
-          <div>
-      <img
-        src="{{ project.image }}"
-        alt="{{ project.title }}"
-        class="w-full h-full object-cover"
-      />  
+        <div class="border border-gcos-green hover:bg-gcos-green p-2 rounded-md group transition-colors duration-300 mr-2">
+          <a href="/open-source-ai">
+          <img
+            src="{{ project.image }}"
+            alt="{{ project.title }}"
+            class="w-12 h-12 object-cover"
+            /> 
+          </a> 
       </div>
-        {% endcapture %}
-        {% include card.html 
-        url='/open-source-ai'
-        content=project_content
-      %}
       {% endfor %}
     </div>
 </div>

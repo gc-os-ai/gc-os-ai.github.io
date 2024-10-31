@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>{{ page.nav_title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/dist-styles.css' | relative_url }}">
 </head>
 <body class="min-h-screen flex flex-col">
@@ -11,6 +11,9 @@
     
     <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-3 py-8">
         <div class="max-w-10xl mx-auto">
+            {% if page.show_title != false %}
+            <h1 class="font-bold text-4xl">{{ page.title }}</h1>
+            {% endif %}
             {{ content }}
         </div>
     </main>

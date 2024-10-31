@@ -1,7 +1,8 @@
 ---
-title: SKTime
+title: SkTime
 image: assets/images/sktime.jpeg
-description: A unified framework for machine learning with time series.
 github_link: https://github.com/sktime
-linkedin_link: https://github.com/sktime
+linkedin_link: https://www.linkedin.com/company/scikit-time/posts/?feedView=all
 ---
+
+A unified framework for machine learning with time series.
