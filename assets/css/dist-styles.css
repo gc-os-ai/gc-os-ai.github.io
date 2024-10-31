@@ -618,6 +618,11 @@ video {
   margin-right: auto;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -686,6 +691,10 @@ video {
   height: 5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -708,6 +717,10 @@ video {
 
 .w-20 {
   width: 5rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .min-w-\[8rem\] {
