@@ -201,17 +201,57 @@ abbr:where([title]) {
 }
 
 /*
-Remove the default font size and weight for headings.
+Font size and weight for headings.
 */
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+  font-size: 2.5rem; /* Adjust size as needed */
+  font-weight: bold; /* Ensures it's bold */
+  color: #0177B9; /* Adjust color as needed */
+}
+
+h2 {
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold; /* Ensures it's bold */
+  color: #0177B9; /* Adjust color as needed */
+}
+
+h3 {
+  font-size: 1.75rem; /* Adjust size as needed */
+  font-weight: bold; /* Ensures it's bold */
+  color: #0177B9; /* Adjust color as needed */
+}
+
+h4 {
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: normal; /* Optional: adjust based on your design */
+  color: #0177B9; /* Adjust color as needed */
+}
+
+h5 {
+  font-size: 1.25rem; /* Adjust size as needed */
+  font-weight: normal; /* Optional: adjust based on your design */
+  color: #0177B9; /* Adjust color as needed */
+}
+
 h6 {
-  font-size: inherit;
-  font-weight: inherit;
+  font-size: 1rem; /* Adjust size as needed */
+  font-weight: normal; /* Optional: adjust based on your design */
+  color: #0177B9; /* Adjust color as needed */
+}
+
+/* list styles */
+
+ul {
+  list-style-type: disc; /* Change to 'circle' or 'square' for different bullet types */
+  margin-left: 20px; /* Indent the list for better visibility */
+}
+
+li {
+  list-style-type: disc;
+  margin-bottom: 5px; /* Add some space between list items */
+  margin-left: 20px; /* Indent the list for better visibility */
+  color: #0177B9; /* Optional: set a color for list items */
 }
 
 /*
