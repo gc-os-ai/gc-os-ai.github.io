@@ -17,6 +17,7 @@ show_title: false
     </h1>
 </div>
 
+<!--
 <div class="container mx-auto py-12">
   <div class="flex flex-wrap -mx-4">
     {% assign articles = site.posts | where:"category", "article" %}
@@ -42,28 +43,30 @@ show_title: false
     {% endfor %}
   </div>
 </div>
+-->
 
 <h2 class="text-4xl font-bold">Get involved with Open Source AI @ GC.OS</h2>
 <div class="container mx-auto py-12">
     <div class="flex flex-wrap -mx-4">
-        {% for opportunity in site.involvement_opportunities %}
-      {% capture opportunity_content %}
-        <h3 class="text-2xl font-bold mb-2 group-hover:text-white">
-          {{ opportunity.title }}
-        </h3>
-        <ul class="mb-4 group-hover:text-white list-disc list-inside">
-          {% for item in opportunity.list_items %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-        <span class="font-semibold group-hover:text-white">Learn more</span>
-      {% endcapture %}
-      
-      {% include card.html 
-        url=opportunity.permalink
-        content=opportunity_content
-      %}
-    {% endfor %}
+      {% assign opportunities = site.involvement_opportunities | sort: 'order' %}
+      {% for opportunity in opportunities %}
+        {% capture opportunity_content %}
+          <h3 class="text-2xl font-bold mb-2 group-hover:text-white">
+            {{ opportunity.title }}
+          </h3>
+          <ul class="mb-4 group-hover:text-white list-disc list-inside">
+            {% for item in opportunity.list_items %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <span class="font-semibold group-hover:text-white">Learn more</span>
+        {% endcapture %}
+        
+        {% include card.html 
+          url=opportunity.permalink
+          content=opportunity_content
+        %}
+      {% endfor %}      
     </div>
 </div>
 
