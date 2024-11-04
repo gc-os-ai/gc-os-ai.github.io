@@ -9,3 +9,6 @@ collections:
     permalink: /:url
   projects:
     ouput: true
+
+plugins:
+  - jemoji

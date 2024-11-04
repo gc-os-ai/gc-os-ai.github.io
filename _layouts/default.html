@@ -14,7 +14,7 @@
             {% if page.show_title != false %}
             <h1 class="font-bold text-4xl">{{ page.title }}</h1>
             {% endif %}
-            {{ content }}
+            {{ content | markdownify }}
         </div>
     </main>
 
