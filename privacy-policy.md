@@ -41,11 +41,21 @@ Please note that we have no control over the content or privacy practices of the
 
 Our website may contain links to external forms that allow you to submit information, managed by us but hosted on third-party platforms, such as Google Forms.
 
-When you submit information via these forms, please be aware that:
+When you submit information via these forms, please be aware of the following.
 
-Data Collection: The data collected through these forms is directly managed by us for the purposes outlined in each form, as outlined in each form
+<br>
 
-Third-Party Processing: The hosting platform (e.g., Google) may process certain technical data, such as your IP address, in accordance with its own privacy policies.
+###### Data Collection
+
+The data collected through these forms is directly managed by us.
+
+Data collected through these forms is strictly for the purposes outlined in each form, and handled as outlined in each form.
+
+<br>
+
+###### Third-Party Processing
+
+The hosting platform (e.g., Google) may process certain technical data, such as your IP address, in accordance with its own privacy policies.
 
 Please review the privacy policy of the platform hosting the form before submitting any information, as we do not control their data processing practices.
 
