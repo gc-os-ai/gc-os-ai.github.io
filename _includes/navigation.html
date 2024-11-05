@@ -22,9 +22,10 @@
                   {% endfor %}
                 {% endfor %}
               </div>
+            {% assign donate_url = '/donate' | relative_url %}
             {% include button.html 
                 title='Donate'
-                url='https://paypal.com/gcosai'
+                url=donate_url
             %}
         </div>
     </div>
