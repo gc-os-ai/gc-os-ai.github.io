@@ -269,6 +269,12 @@ main a {
   text-decoration: underline; /* Add underline */
 }
 
+/* Exclude links inside panels from being styled */
+.flex a {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none; /* Remove underline */
+}
+
 main a:hover {
   color: #0056b3; /* Darker color on hover */
   text-decoration: none; /* Remove underline on hover */
