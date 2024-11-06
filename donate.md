@@ -4,7 +4,7 @@ title: Donate
 show_title: false
 ---
 
-### To donate, transfer to:
+### Donations to:
 
 
 **GC.OS German Center for Open Source AI Software Research**
@@ -29,7 +29,7 @@ If you wish to donate towards a more specific purpose, please contact us under
 ### Donations to GC.OS are Tax-deductible
 
 For smaller donations (up to few hundred EUR), a bank receipt may be sufficient
-to claim deductions, depending on your jurisdiction and tax country.
+to claim deductions, depending on your tax country.
 
 <br>
 
