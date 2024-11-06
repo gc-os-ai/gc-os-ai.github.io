@@ -2,13 +2,20 @@ title: German Center for Open Source AI Software Research
 email: fkiraly@gcos.ai
 description: Non-profit open source AI software for the D&EU tech landscape, and supporting openly/publicly governed open source.
 
+# Root URL of GitHub Pages site
+url: "https://gc-os-ai.github.io"
+baseurl: ""
+
+# Permalink setting
 permalink: /:name
 
+# Collections
 collections:
   involvement_opportunities:
     permalink: /:url
   projects:
     ouput: true
 
+# Plugins
 plugins:
   - jemoji
