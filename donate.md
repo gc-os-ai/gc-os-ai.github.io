@@ -13,6 +13,14 @@ show_title: false
 
 **BIC:** GENODES1EHI
 
+**Address:**
+
+Talstraße 14
+
+89584 Ehingen
+
+Germany
+
 <br>
 
 To donate to a specific project supported by GC.OS,
