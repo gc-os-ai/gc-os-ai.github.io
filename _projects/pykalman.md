@@ -1,6 +1,6 @@
 ---
 title: pykalman
-image: assets/images/pykalman.jpg
+image: assets/images/pykalman.png
 github_link: https://github.com/pykalman/pykalman
 linkedin_link: https://github.com/pykalman/pykalman
 ---
