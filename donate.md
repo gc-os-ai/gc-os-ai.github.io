@@ -13,6 +13,10 @@ show_title: false
 
 **BIC:** GENODES1EHI
 
+**Tax number (D):** 58001/35083
+
+**VAT number (EU):** DE 370 309 614
+
 **Address:**
 
 Talstraße 14
