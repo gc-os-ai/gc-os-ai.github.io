@@ -1,6 +1,6 @@
 ---
 title: skpro
-image: assets/images/skpro-icon.svg
+image: assets/images/skpro-logo-square.png
 github_link: https://github.com/sktime/skpro
 linkedin_link: https://www.linkedin.com/company/scikit-time/posts/?feedView=all
 ---
