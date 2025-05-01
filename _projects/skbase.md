@@ -1,6 +1,6 @@
 ---
 title: scikit-base
-image: assets/images/skbase-logo.png
+image: assets/images/skbase-logo-square.png
 github_link: https://github.com/sktime/skbase
 linkedin_link: https://www.linkedin.com/company/scikit-time/posts/?feedView=all
 ---
