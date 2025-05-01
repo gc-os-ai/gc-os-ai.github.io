@@ -1,6 +1,6 @@
 ---
 title: pytorch-forecasting
-image: assets/images/ptf-logo.svg
+image: assets/images/ptf-logo-square.svg
 github_link: https://github.com/sktime/pytorch-forecasting
 linkedin_link: https://github.com/sktime/pytorch-forecasting
 ---
