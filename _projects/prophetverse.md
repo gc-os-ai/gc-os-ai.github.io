@@ -1,6 +1,6 @@
 ---
 title: prophetverse
-image: assets/images/prophetverse.png
+image: assets/images/prophetverse-logo-square.png
 github_link: https://github.com/felipeangelimvieira/prophetverse
 linkedin_link: https://github.com/felipeangelimvieira/prophetverse
 ---

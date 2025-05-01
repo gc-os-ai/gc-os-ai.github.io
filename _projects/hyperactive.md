@@ -1,6 +1,6 @@
 ---
 title: hyperactive
-image: assets/images/hyperactive.png
+image: assets/images/hyperactive-logo-square.png
 github_link: https://github.com/SimonBlanke/Hyperactive
 linkedin_link: https://github.com/SimonBlanke/Hyperactive
 ---
