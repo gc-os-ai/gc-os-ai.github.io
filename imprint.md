@@ -25,6 +25,24 @@ Website: gcos(dot)ai
 
 <br>
 
+#### Bank details
+
+**IBAN:** DE 0863 0910 1006 0167 4006
+
+**BIC:** GENODES1EHI
+
+<br>
+
+#### Registration numbers
+
+**Trade number (D):** HRB 748750
+
+**Tax number (D):** 58001/35083
+
+**VAT number (EU):** DE 370 309 614
+
+<br>
+
 #### Disclaimer
 
 The information provided on this website is for general informational purposes only.
