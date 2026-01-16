@@ -15,6 +15,8 @@ collections:
     permalink: /:url
   projects:
     ouput: true
+  staff:
+    ouput: true
 
 # Plugins
 plugins:
