@@ -57,7 +57,8 @@
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(76, 168, 147, 0.18);
         border-radius: 1.1rem;
-        padding: 1.6rem 1.2rem 1.4rem;
+        padding: 1.6rem 1rem 1.4rem;
+        /* Slightly reduced horizontal padding (from 1.2rem) */
         text-align: center;
         transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
         min-width: 0;
@@ -68,11 +69,13 @@
         background: rgba(255, 255, 255, 0.07);
         border-color: rgba(76, 168, 147, 0.45);
         box-shadow: 0 4px 24px rgba(76, 168, 147, 0.1);
+        cursor: pointer;
     }
 
     @media (min-width: 768px) {
         .stat-card {
-            padding: 2rem 1.5rem 1.75rem;
+            padding: 2rem 1.2rem 1.75rem;
+            /* Slightly reduced horizontal padding (from 1.5rem) */
         }
     }
 
@@ -101,15 +104,15 @@
     /* ── Number ─────────────────────────────────────────────── */
     .stat-card__value {
         display: block;
-        /* clamp ensures it scales from small to large screens gracefully */
-        font-size: clamp(1.45rem, 3.8vw, 2.15rem);
+        /* Slightly smaller max clamp to prevent wrapping on 5-col grids */
+        font-size: clamp(1.4rem, 3.5vw, 1.9rem);
         font-weight: 700;
         color: #4ca893;
         line-height: 1.1;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.02em;
         margin-bottom: 0.55rem;
-        word-break: break-word;
-        /* last resort — prevents clipping on narrow cards */
+        white-space: nowrap;
+        /* Prevent wrapping within the number itself */
     }
 
     /* ── Label + LIVE row ────────────────────────────────────── */
@@ -198,10 +201,12 @@
             <!-- ① Projects -->
             <div class="stat-card">
                 <div class="stat-card__icon" aria-hidden="true">
-                    <!-- Folder/projects icon -->
+                    <!-- Folder with branch icon -->
                     <svg viewBox="0 0 24 24">
-                        <path d="M3 7a2 2 0 0 1 2-2h3.5l2 2H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
-                        <path d="M9 13h6M12 10v6" />
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="2" />
+                        <path d="M12 15v3" />
+                        <circle cx="12" cy="18" r="1" />
                     </svg>
                 </div>
                 <span class="stat-card__value">13</span>
@@ -213,13 +218,12 @@
             <!-- ② Contributors -->
             <div class="stat-card">
                 <div class="stat-card__icon" aria-hidden="true">
-                    <!-- Git-branch / contributors icon -->
+                    <!-- Git Branch icon -->
                     <svg viewBox="0 0 24 24">
-                        <circle cx="6" cy="18" r="2" />
-                        <circle cx="6" cy="6" r="2" />
-                        <circle cx="18" cy="6" r="2" />
-                        <path d="M6 8v8" />
-                        <path d="M6 8c4 0 7 1.5 7 4s3 4 5 4" />
+                        <line x1="6" y1="3" x2="6" y2="15" />
+                        <circle cx="18" cy="6" r="3" />
+                        <circle cx="6" cy="18" r="3" />
+                        <path d="M18 9a9 9 0 0 1-9 9" />
                     </svg>
                 </div>
                 <span class="stat-card__value">1.126+</span>
@@ -248,9 +252,9 @@
                 <div class="stat-card__icon" aria-hidden="true">
                     <!-- Download arrow icon -->
                     <svg viewBox="0 0 24 24">
-                        <path d="M12 2v13" />
-                        <path d="M7 10l5 5 5-5" />
-                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
                     </svg>
                 </div>
                 <span class="stat-card__value">5.4M</span>
@@ -264,11 +268,11 @@
                 <div class="stat-card__icon" aria-hidden="true">
                     <!-- Trending up icon -->
                     <svg viewBox="0 0 24 24">
-                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                        <polyline points="16 7 22 7 22 13" />
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                        <polyline points="17 6 23 6 23 12" />
                     </svg>
                 </div>
-                <span class="stat-card__value">131.564.966</span>
+                <span class="stat-card__value">131.564.921</span>
                 <div class="stat-card__footer">
                     <span class="stat-card__label">Total Downloads</span>
                     <span class="live-badge" aria-label="Live data">
