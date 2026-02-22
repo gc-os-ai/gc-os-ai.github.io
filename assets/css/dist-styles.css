@@ -201,57 +201,17 @@ abbr:where([title]) {
 }
 
 /*
-Font size and weight for headings.
+Remove the default font size and weight for headings.
 */
 
-h1 {
-  font-size: 2.5rem; /* Adjust size as needed */
-  font-weight: bold; /* Ensures it's bold */
-  color: #0177B9; /* Adjust color as needed */
-}
-
-h2 {
-  font-size: 2rem; /* Adjust size as needed */
-  font-weight: bold; /* Ensures it's bold */
-  color: #0177B9; /* Adjust color as needed */
-}
-
-h3 {
-  font-size: 1.75rem; /* Adjust size as needed */
-  font-weight: bold; /* Ensures it's bold */
-  color: #0177B9; /* Adjust color as needed */
-}
-
-h4 {
-  font-size: 1.5rem; /* Adjust size as needed */
-  font-weight: normal; /* Optional: adjust based on your design */
-  color: #0177B9; /* Adjust color as needed */
-}
-
-h5 {
-  font-size: 1.25rem; /* Adjust size as needed */
-  font-weight: normal; /* Optional: adjust based on your design */
-  color: #0177B9; /* Adjust color as needed */
-}
-
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-  font-size: 1rem; /* Adjust size as needed */
-  font-weight: normal; /* Optional: adjust based on your design */
-  color: #0177B9; /* Adjust color as needed */
-}
-
-/* list styles */
-
-ul {
-  list-style-type: disc; /* Change to 'circle' or 'square' for different bullet types */
-  margin-left: 20px; /* Indent the list for better visibility */
-}
-
-li {
-  list-style-type: disc;
-  margin-bottom: 5px; /* Add some space between list items */
-  margin-left: 20px; /* Indent the list for better visibility */
-  color: #0177B9; /* Optional: set a color for list items */
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 /*
@@ -261,28 +221,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 a {
   color: inherit;
   text-decoration: inherit;
-}
-
-/* Anchor links style */
-main a {
-  color: #007bff; /* Customize link color */
-  text-decoration: underline; /* Add underline */
-}
-
-/* Exclude links inside panels from being styled */
-.flex a {
-  color: inherit; /* Inherit color from parent */
-  text-decoration: none; /* Remove underline */
-}
-
-main a:hover {
-  color: #0056b3; /* Darker color on hover */
-  text-decoration: none; /* Remove underline on hover */
-}
-
-/* If you want to style visited links differently */
-main a:visited {
-  color: #551a8b; /* Customize visited link color */
 }
 
 /*
@@ -650,6 +588,10 @@ video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
@@ -709,19 +651,16 @@ video {
   margin-top: auto;
 }
 
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .hidden {
@@ -736,12 +675,12 @@ video {
   height: 4rem;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
 .h-32 {
   height: 8rem;
+}
+
+.h-40 {
+  height: 10rem;
 }
 
 .h-8 {
@@ -758,14 +697,6 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-12 {
-  width: 3rem;
-}
-
-.w-24 {
-  width: 6rem;
 }
 
 .w-40 {
@@ -804,6 +735,10 @@ video {
   flex-grow: 1;
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -834,10 +769,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
 }
 
 .space-x-10 > :not([hidden]) ~ :not([hidden]) {
@@ -1019,6 +950,10 @@ video {
   font-weight: 600;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1049,6 +984,14 @@ video {
   --tw-backdrop-blur: blur(4px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-colors {

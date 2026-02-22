@@ -1,0 +1,283 @@
+<style>
+    /* ── Stats Section ───────────────────────────────────────── */
+    .stats-section {
+        background: linear-gradient(135deg, #0b1c17 0%, #0f2318 60%, #0b1c14 100%);
+        padding: 4.5rem 1.5rem;
+        overflow: hidden;
+    }
+
+    .stats-section__inner {
+        max-width: 72rem;
+        margin: 0 auto;
+    }
+
+    /* Heading */
+    .stats-section__heading {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .stats-section__heading h2 {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 700;
+        color: #e8f5ee;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.65rem;
+    }
+
+    .stats-section__heading p {
+        color: #6b9e82;
+        font-size: 1rem;
+        max-width: 34rem;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* ── Grid ───────────────────────────────────────────────── */
+    .stats-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 480px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .stats-grid {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    /* ── Card ───────────────────────────────────────────────── */
+    .stat-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(76, 168, 147, 0.18);
+        border-radius: 1.1rem;
+        padding: 1.6rem 1.2rem 1.4rem;
+        text-align: center;
+        transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+        min-width: 0;
+        /* allow shrinking to prevent overflow */
+    }
+
+    .stat-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border-color: rgba(76, 168, 147, 0.45);
+        box-shadow: 0 4px 24px rgba(76, 168, 147, 0.1);
+    }
+
+    @media (min-width: 768px) {
+        .stat-card {
+            padding: 2rem 1.5rem 1.75rem;
+        }
+    }
+
+    /* ── Icon ───────────────────────────────────────────────── */
+    .stat-card__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.75rem;
+        background: rgba(76, 168, 147, 0.15);
+        margin-bottom: 1.1rem;
+    }
+
+    .stat-card__icon svg {
+        width: 1.35rem;
+        height: 1.35rem;
+        stroke: #4ca893;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    /* ── Number ─────────────────────────────────────────────── */
+    .stat-card__value {
+        display: block;
+        /* clamp ensures it scales from small to large screens gracefully */
+        font-size: clamp(1.45rem, 3.8vw, 2.15rem);
+        font-weight: 700;
+        color: #4ca893;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.55rem;
+        word-break: break-word;
+        /* last resort — prevents clipping on narrow cards */
+    }
+
+    /* ── Label + LIVE row ────────────────────────────────────── */
+    .stat-card__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        /* let LIVE badge drop below on very narrow screens */
+    }
+
+    .stat-card__label {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #6b9e82;
+        line-height: 1.4;
+    }
+
+    /* ── LIVE Badge ──────────────────────────────────────────── */
+    .live-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.18rem 0.5rem;
+        background: rgba(239, 68, 68, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        border-radius: 9999px;
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: #ef4444;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    .live-badge__dot {
+        position: relative;
+        display: inline-flex;
+        width: 0.42rem;
+        height: 0.42rem;
+    }
+
+    .live-badge__dot::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: #ef4444;
+        opacity: 0.75;
+        animation: live-ping 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .live-badge__dot::after {
+        content: '';
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #ef4444;
+    }
+
+    @keyframes live-ping {
+
+        75%,
+        100% {
+            transform: scale(2.4);
+            opacity: 0;
+        }
+    }
+</style>
+
+<section class="stats-section" aria-label="Our Impact statistics">
+    <div class="stats-section__inner">
+
+        <!-- Heading -->
+        <div class="stats-section__heading">
+            <h2>Our Impact</h2>
+            <p>We develop open source AI projects that are used worldwide and reach an ever-growing community.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="stats-grid">
+
+            <!-- ① Projects -->
+            <div class="stat-card">
+                <div class="stat-card__icon" aria-hidden="true">
+                    <!-- Folder/projects icon -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 7a2 2 0 0 1 2-2h3.5l2 2H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
+                        <path d="M9 13h6M12 10v6" />
+                    </svg>
+                </div>
+                <span class="stat-card__value">13</span>
+                <div class="stat-card__footer">
+                    <span class="stat-card__label">Projects</span>
+                </div>
+            </div>
+
+            <!-- ② Contributors -->
+            <div class="stat-card">
+                <div class="stat-card__icon" aria-hidden="true">
+                    <!-- Git-branch / contributors icon -->
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="6" cy="18" r="2" />
+                        <circle cx="6" cy="6" r="2" />
+                        <circle cx="18" cy="6" r="2" />
+                        <path d="M6 8v8" />
+                        <path d="M6 8c4 0 7 1.5 7 4s3 4 5 4" />
+                    </svg>
+                </div>
+                <span class="stat-card__value">1.126+</span>
+                <div class="stat-card__footer">
+                    <span class="stat-card__label">Contributors</span>
+                </div>
+            </div>
+
+            <!-- ③ Core Developers -->
+            <div class="stat-card">
+                <div class="stat-card__icon" aria-hidden="true">
+                    <!-- Code brackets icon -->
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </div>
+                <span class="stat-card__value">50+</span>
+                <div class="stat-card__footer">
+                    <span class="stat-card__label">Core Developer</span>
+                </div>
+            </div>
+
+            <!-- ④ Monthly Downloads -->
+            <div class="stat-card">
+                <div class="stat-card__icon" aria-hidden="true">
+                    <!-- Download arrow icon -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2v13" />
+                        <path d="M7 10l5 5 5-5" />
+                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+                    </svg>
+                </div>
+                <span class="stat-card__value">5.4M</span>
+                <div class="stat-card__footer">
+                    <span class="stat-card__label">Monthly Downloads</span>
+                </div>
+            </div>
+
+            <!-- ⑤ Total Downloads (LIVE) -->
+            <div class="stat-card">
+                <div class="stat-card__icon" aria-hidden="true">
+                    <!-- Trending up icon -->
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                        <polyline points="16 7 22 7 22 13" />
+                    </svg>
+                </div>
+                <span class="stat-card__value">131.564.966</span>
+                <div class="stat-card__footer">
+                    <span class="stat-card__label">Total Downloads</span>
+                    <span class="live-badge" aria-label="Live data">
+                        <span class="live-badge__dot" aria-hidden="true"></span>
+                        LIVE
+                    </span>
+                </div>
+            </div>
+
+        </div><!-- /stats-grid -->
+    </div><!-- /inner -->
+</section>
