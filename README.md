@@ -1,3 +1,5 @@
+**NOTE: THIS WEBPAGE IS NO LONGER LIVE, and this repository is deprecated.**
+
 Webpage sources for gcos.ai, the Webpage of GC.OS.
 
 Used by members of GC.OS and supported open source projects primarily,
