@@ -14,7 +14,7 @@ collections:
   involvement_opportunities:
     permalink: /:url
   projects:
-    ouput: true
+    output: true
 
 # Plugins
 plugins:
